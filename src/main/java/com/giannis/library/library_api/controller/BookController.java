@@ -1,6 +1,7 @@
 package com.giannis.library.library_api.controller;
 
 import com.giannis.library.library_api.model.Book;
+import com.giannis.library.library_api.service.BookService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -10,21 +11,28 @@ import java.util.List;
 @RequestMapping("/books")
 
 public class BookController{
+    
+    //With service stereotype spring gives instance of the object BookService
+    private final BookService bookService;
+    
 
-    private List<Book> books = new ArrayList<>();
+    //Constructor 
+    public BookController (BookService bookService){
+        this.bookService = bookService;
+    }
 
     //GET /books
     @GetMapping
-    public List<Book> getAllBooks(){
-        return books;
+    public List <Book> getBooks(){
+        return bookService.getAllBooks();
     }
 
     
     //POST /books
     @PostMapping
-    public Book addBook(@RequestBody Book book){
-        books.add(book);
-        return book;
+    public void addBook(@RequestBody Book book){
+        bookService.addBook(book);
+        
     }
 
 

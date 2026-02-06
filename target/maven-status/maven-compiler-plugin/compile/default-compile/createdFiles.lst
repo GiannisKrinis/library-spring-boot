@@ -1,4 +1,5 @@
 com/giannis/library/library_api/model/Book.class
 com/giannis/library/library_api/controller/BookController.class
 com/giannis/library/library_api/LibraryApiApplication.class
+com/giannis/library/library_api/service/BookService.class
 com/giannis/library/library_api/controller/HelloController.class
