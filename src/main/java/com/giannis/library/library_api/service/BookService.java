@@ -1,21 +1,26 @@
 package com.giannis.library.library_api.service;
 
 import com.giannis.library.library_api.model.Book;
+import com.giannis.library.library_api.repository.BookRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class BookService {
 
-    private final List<Book> books = new ArrayList<>();
+    private final BookRepository bookRepository;
+
+    public BookService(BookRepository bookRepository) {
+        this.bookRepository = bookRepository;
+    }
 
     public List<Book> getAllBooks() {
-        return books;
+        return bookRepository.findAll();
     }
 
-    public void addBook(Book book) {
-        books.add(book);
+    public Book addBook(Book book) {
+        return bookRepository.save(book);
     }
 }
+
