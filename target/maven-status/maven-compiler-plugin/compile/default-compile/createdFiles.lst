@@ -1,5 +1,7 @@
 com/giannis/library/library_api/repository/BookRepository.class
+com/giannis/library/library_api/dto/BookResponseDTO.class
 com/giannis/library/library_api/model/Book.class
+com/giannis/library/library_api/dto/BookRequestDTO.class
 com/giannis/library/library_api/controller/BookController.class
 com/giannis/library/library_api/service/BookService.class
 com/giannis/library/library_api/controller/HelloController.class
